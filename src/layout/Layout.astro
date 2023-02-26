@@ -1,0 +1,32 @@
+---
+import TheHeader from "@components/The/Header.astro"
+import TheNav from "@components/The/Nav.astro"
+import "@assets/styles/global.css"
+import logoUrl from "@assets/images/dorakika.png"
+interface Props{
+    title: string,
+	keywords: string,
+	description: string
+}
+const { title, keywords, description } = Astro.props
+---
+
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href={logoUrl} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<slot name="head"></slot>
+		<title>{title}</title>
+	</head>
+	<body>
+        <TheHeader/>
+		<TheNav/>
+        <main id="main">
+            <slot></slot>
+        </main>
+	</body>
+</html>

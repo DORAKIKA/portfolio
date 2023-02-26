@@ -1,0 +1,86 @@
+
+<div class="about-me">
+    <div class="info-left">
+        <span class="tag">🤖️ 数码科技爱好者</span>
+        <span class="tag">🔍 分享与热心帮助</span>
+        <span class="tag">💻 前端开发工程师</span>
+    </div>
+    <div class="avatar">
+        <img class="avatar-img" src="https://q.qlogo.cn/g?b=qq&nk=1633198089&s=640" alt="">
+    </div>
+    <div class="info-right">
+        <span class="tag">哆啦A梦一份子  🥳</span>
+        <span class="tag">吃饭睡觉打游戏 🎮</span>
+        <span class="tag">设计开发一条龙 🔨</span>
+    </div>
+</div>
+
+<style>
+    .about-me{
+        display: flex;
+        justify-content: center;
+        gap: 1em  ;
+        margin: 1em 0;
+    }
+    .about-me .avatar-img{
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+    }
+    .about-me .avatar{
+        position: relative;
+    }
+    .about-me .avatar::before {
+        content: '';
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -o-transition: 1s;
+        -ms-transition: 1s;
+        transition: 1s;
+        width: 30px;
+        height: 30px;
+        background: #57bd6a;
+        position: absolute;
+        border-radius: 50%;
+        border: 5px solid var(--bg);
+        bottom: 5px;
+        right: 10px;
+        z-index: 2;
+    }
+    .info-left,.info-right{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    @media (max-width: 900px){
+        .info-left, .info-right{
+            display: none;
+        }
+    }
+    .tag{
+        background: rgba(var(--card-bg-meta), 0.9);
+        border: 2px solid rgba(var(--text-color-meta), 0.1);
+        color: rgba(var(--text-color-meta), 1);
+        padding: 0.5em;
+        border-radius: 2em;
+        font-size: 14px;
+        animation: wave 4s ease-in-out 0s infinite normal none running ;
+    }
+    .info-left .tag:nth-child(2){
+        margin: 0 1em 0 -1em;
+    }
+    .info-right .tag:nth-child(2){
+        margin: 0 -1em 0 1em;
+    }
+    .tag:nth-child(2){
+        animation-delay: 0.6s;
+    }
+    .tag:nth-child(3){
+        animation-delay: 1.2s;
+    }
+    @keyframes wave{
+    0% { transform: translate(0,  -4px); }
+    50%  { transform: translate(0, 4px); }
+    100%   { transform: translate(0, -4px); }   
+    }
+</style>

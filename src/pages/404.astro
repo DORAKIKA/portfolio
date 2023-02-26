@@ -1,0 +1,17 @@
+---
+import Layout from "@layout/Layout.astro"
+import Padding from "@components/Base/Padding.astro";
+import AboutMe from "@components/View/AboutMe.astro";
+import { site } from "src/config"
+---
+
+<Layout title={`404 | ${site.author}`} keywords={site.keywords} description={site.description}>
+    <meta name="robots" content="none" slot="head">
+    <Padding height="1em"/>
+	<AboutMe/>
+    <Padding height="1em"/>
+    <h2 class="title">Page Not Found</h2>
+</Layout>
+
+<style>
+</style>

@@ -1,0 +1,68 @@
+---
+
+---
+
+<header id="header">
+    <h1>
+        <a href="/" class="site-icon">DORAKIKA</a>
+    </h1>
+    <div class="site-buttons">
+        <button class="site-button" onclick="toggleNav()">
+            <svg class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10911"><path d="M416 64H128c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64zM896 64h-288c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64zM416 544H128c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64v-288c0-35.2-28.8-64-64-64zM896 544h-288c-35.2 0-64 28.8-64 64v288c0 35.2 28.8 64 64 64h288c35.2 0 64-28.8 64-64v-288c0-35.2-28.8-64-64-64z" p-id="10912"></path></svg>
+        </button>
+        <button class="site-button" onclick="toggleDarkMode()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        </button>
+    </div>
+</header>
+<script is:inline>
+function toggleDarkMode(){
+    document.documentElement.classList.toggle('dark')
+}
+</script>
+
+<style>
+#header{
+    width: 100%;
+    height: 6em;
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#header .site-icon{
+    height: 3em;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgba(var(--text-color-meta),1);
+    background: rgba(var(--card-bg-meta), 1);
+    display: flex;
+    align-items: center;
+    padding: 0 1em;
+    border-radius: 2em;
+    border: 3px solid rgba(var(--text-color-meta), 0.1);
+}
+#header .site-icon-img{
+    width: 100%;
+    height: 100%;
+}
+#header .site-buttons{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+#header .site-button{
+    width: 3em;
+    height: 3em;
+    border: none;
+    outline: none;
+    padding: 0.75em;
+    border: 3px solid rgba(var(--text-color-meta), 0.1);
+    border-radius: 50%;
+    background: rgba(var(--card-bg-meta), 1);
+    color: rgba(var(--text-color-meta), 1);
+}
+#header .site-button:hover{
+    background: rgba(var(--card-bg-meta), 0.5);
+}
+</style>

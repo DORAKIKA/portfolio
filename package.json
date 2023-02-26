@@ -1,0 +1,15 @@
+{
+	"name": "protfolio",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev --port 2413",
+		"start": "yarn dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^2.0.4"
+	}
+}
