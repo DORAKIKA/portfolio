@@ -1,0 +1,15 @@
+---
+import { footer } from "src/config";
+---
+
+
+<footer id="footer">
+    {footer.beian.enabled ? (<span><a href="https://beian.miit.gov.cn/" target="_blank">{footer.beian.value}</a></span>) : ''}
+</footer>
+
+<style>
+#footer{
+    padding: 1em;
+    text-align: center;
+}
+</style>

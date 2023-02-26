@@ -4,7 +4,12 @@ export const site = {
     description: '',
     keywords: '',
 }
-
+export const footer = {
+    beian: {
+        enabled: true,
+        value: '皖ICP备2022003488号'
+    }
+}
 export const navs = [
     {
         name: 'Quick link',
