@@ -1,17 +1,19 @@
-
+---
+import { aboutMe, site } from "src/config";
+---
 <div class="about-me">
     <div class="info-left">
-        <span class="tag">🤖️ 数码科技爱好者</span>
-        <span class="tag">🔍 分享与热心帮助</span>
-        <span class="tag">💻 前端开发工程师</span>
+        {
+            aboutMe.left_tags.map(t => (<span class="tag">{t}</span>))
+        }
     </div>
     <div class="avatar">
-        <img class="avatar-img" src="https://q.qlogo.cn/g?b=qq&nk=1633198089&s=640" alt="">
+        <img class="avatar-img" src={aboutMe.avatar_url} alt={site.author}/>
     </div>
     <div class="info-right">
-        <span class="tag">哆啦A梦一份子  🥳</span>
-        <span class="tag">吃饭睡觉打游戏 🎮</span>
-        <span class="tag">设计开发一条龙 🔨</span>
+        {
+            aboutMe.right_tags.map(t => (<span class="tag">{t}</span>))
+        }
     </div>
 </div>
 
@@ -32,11 +34,7 @@
     }
     .about-me .avatar::before {
         content: '';
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        -o-transition: 1s;
-        -ms-transition: 1s;
-        transition: 1s;
+        transition: 0.3s;
         width: 30px;
         height: 30px;
         background: #57bd6a;
