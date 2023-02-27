@@ -2,6 +2,7 @@
 import TheHeader from "@components/The/Header.astro"
 import TheNav from "@components/The/Nav.astro"
 import TheFooter from "@components/The/Footer.astro"
+import BaseHead from "@components/The/BaseHead/BaseHead.astro"
 import "@assets/styles/global.css"
 interface Props{
     title: string,
@@ -13,12 +14,7 @@ const { title, keywords, description } = Astro.props
 
 <html lang="zh-CN">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/png" href="/images/dorakika.png" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<meta name="keywords" content={keywords} />
+		<BaseHead title={title} description={description} keywords={keywords}/>
 		<slot name="head"></slot>
 		<title>{title}</title>
 	</head>
