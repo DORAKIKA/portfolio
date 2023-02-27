@@ -13,7 +13,7 @@ export interface Props {
 const isPROD = import.meta.env.PROD
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title = "DORAKIKA", description = "", cover, keywords="" } = Astro.props;
+const { title = "DORAKIKA", description = "", cover="", keywords="" } = Astro.props;
 ---
 
 <!-- Global Metadata -->

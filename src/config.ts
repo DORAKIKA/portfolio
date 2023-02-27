@@ -3,7 +3,8 @@ export const site = {
     slogan: '热爱漫无边际，生活自有分寸',
     description: '',
     keywords: '',
-    favicon: ''
+    favicon: '',
+    url: 'https://dorakika.cn'
 }
 export const footer = {
     beian: {
