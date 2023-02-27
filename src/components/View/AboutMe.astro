@@ -1,5 +1,6 @@
 ---
 import { aboutMe, site } from "src/config";
+const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
 ---
 <div class="about-me">
     <div class="info-left">
@@ -17,68 +18,118 @@ import { aboutMe, site } from "src/config";
     </div>
 </div>
 
+<div class="about-me-2">
+    <button class="trigger">Find Me 😶‍🌫️</button>
+    {
+        ss.map(s => (
+            <button class="trigger">{s}</button>
+        ))
+    }
+</div>
+
 <style>
-    .about-me{
+.about-me{
+    display: flex;
+    justify-content: center;
+    gap: 1em  ;
+    margin: 1em 0;
+}
+.about-me .avatar-img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+}
+.about-me .avatar{
+    position: relative;
+}
+.about-me .avatar::before {
+    content: '';
+    transition: 0.3s;
+    width: 30px;
+    height: 30px;
+    background: #57bd6a;
+    position: absolute;
+    border-radius: 50%;
+    border: 5px solid var(--bg);
+    bottom: 5px;
+    right: 10px;
+    z-index: 2;
+}
+.info-left,.info-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.tag{
+    background: rgba(var(--card-bg-meta), 0.9);
+    border: 2px solid rgba(var(--text-color-meta), 0.1);
+    color: rgba(var(--text-color-meta), 1);
+    padding: 0.5em;
+    border-radius: 2em;
+    font-size: 14px;
+    animation: wave 4s ease-in-out 0s infinite normal none running ;
+}
+.info-left .tag:nth-child(2){
+    margin: 0 1em 0 -1em;
+}
+.info-right .tag:nth-child(2){
+    margin: 0 -1em 0 1em;
+}
+.tag:nth-child(2){
+    animation-delay: 0.6s;
+}
+.tag:nth-child(3){
+    animation-delay: 1.2s;
+}
+@keyframes wave{
+0% { transform: translate(0,  -4px); }
+50%  { transform: translate(0, 4px); }
+100%   { transform: translate(0, -4px); }   
+}
+/*  */
+
+.about-me-2{
+    width: fit-content;
+    margin: 0 auto;
+    position: relative;
+    display: none;
+    justify-content: center;
+    user-select: none;
+}
+.trigger{
+    width: max-content;
+    height: 3em;
+    padding: 0.5em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    border-radius: 2em;
+    background: var(--card-bg);
+    border: none;
+    box-shadow: 0 0 0 3px inset var(--border-color);
+    color: rgba(var(--text-color-meta), 1);
+    transition: 0.3s;
+    overflow: hidden;
+    position: absolute;
+}
+
+.trigger,
+.trigger:focus{
+    opacity: 0;
+    z-index: -1;
+}
+.trigger:nth-child(1),
+.trigger:focus + .trigger{
+    opacity: 1;
+    z-index: 0;
+}
+@media (max-width: 900px){
+    .info-left, .info-right{
+        display: none;
+    }
+    .about-me-2{
         display: flex;
-        justify-content: center;
-        gap: 1em  ;
-        margin: 1em 0;
     }
-    .about-me .avatar-img{
-        width: 10em;
-        height: 10em;
-        border-radius: 50%;
-    }
-    .about-me .avatar{
-        position: relative;
-    }
-    .about-me .avatar::before {
-        content: '';
-        transition: 0.3s;
-        width: 30px;
-        height: 30px;
-        background: #57bd6a;
-        position: absolute;
-        border-radius: 50%;
-        border: 5px solid var(--bg);
-        bottom: 5px;
-        right: 10px;
-        z-index: 2;
-    }
-    .info-left,.info-right{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    @media (max-width: 900px){
-        .info-left, .info-right{
-            display: none;
-        }
-    }
-    .tag{
-        background: rgba(var(--card-bg-meta), 0.9);
-        border: 2px solid rgba(var(--text-color-meta), 0.1);
-        color: rgba(var(--text-color-meta), 1);
-        padding: 0.5em;
-        border-radius: 2em;
-        font-size: 14px;
-        animation: wave 4s ease-in-out 0s infinite normal none running ;
-    }
-    .info-left .tag:nth-child(2){
-        margin: 0 1em 0 -1em;
-    }
-    .info-right .tag:nth-child(2){
-        margin: 0 -1em 0 1em;
-    }
-    .tag:nth-child(2){
-        animation-delay: 0.6s;
-    }
-    .tag:nth-child(3){
-        animation-delay: 1.2s;
-    }
-    @keyframes wave{
-    0% { transform: translate(0,  -4px); }
-    50%  { transform: translate(0, 4px); }
-    100%   { transform: translate(0, -4px); }   
-    }
+}
 </style>

@@ -32,6 +32,9 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     --texture: rgba(43,44,46,0.02);
 
     --text-color-meta: 156,163,175;
+
+    --card-bg: rgba(var(--card-bg-meta));
+    --border-color: #eaedef;
 }
 @media (max-width: 900px) {
     :root{
@@ -43,6 +46,8 @@ html.dark{
     --bg: #171717;
     --text-color-meta: 115, 115, 115;
     --texture: rgba(99,99,99,0.02);
+
+    --border-color: #292929;
 }
 
 body{
