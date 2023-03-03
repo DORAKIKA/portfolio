@@ -35,12 +35,15 @@ function toggleDarkMode(){
     font-size: 14px;
     font-weight: bold;
     color: rgba(var(--text-color-meta),1);
-    background: rgba(var(--card-bg-meta), 1);
+    background: rgba(var(--card-bg-meta), 0.5);
     display: flex;
     align-items: center;
     padding: 0 1em;
     border-radius: 2em;
     border: 3px solid rgba(var(--text-color-meta), 0.1);
+}
+#header .site-icon:hover{
+    background: rgba(var(--card-bg-meta), 1);
 }
 #header .site-icon-img{
     width: 100%;
@@ -59,10 +62,10 @@ function toggleDarkMode(){
     padding: 0.75em;
     border: 3px solid rgba(var(--text-color-meta), 0.1);
     border-radius: 50%;
-    background: rgba(var(--card-bg-meta), 1);
+    background: rgba(var(--card-bg-meta), 0.5);
     color: rgba(var(--text-color-meta), 1);
 }
 #header .site-button:hover{
-    background: rgba(var(--card-bg-meta), 0.5);
+    background: rgba(var(--card-bg-meta), 1);
 }
 </style>

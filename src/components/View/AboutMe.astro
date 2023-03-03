@@ -38,6 +38,8 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     width: 10em;
     height: 10em;
     border-radius: 50%;
+    border: 5px solid rgba(var(--card-bg-meta), 0.5);
+    transition: 0.3s;
 }
 .about-me .avatar{
     position: relative;
@@ -45,14 +47,15 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
 .about-me .avatar::before {
     content: '';
     transition: 0.3s;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background: #57bd6a;
     position: absolute;
     border-radius: 50%;
-    border: 5px solid var(--bg);
-    bottom: 5px;
-    right: 10px;
+    box-shadow: 0 0 0 5px rgba(var(--card-bg-meta), 0.5);
+    /* border: 5px solid var(--bg); */
+    bottom: 14px;
+    right: 14px;
     z-index: 2;
 }
 .info-left,.info-right{
@@ -61,7 +64,7 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     justify-content: space-around;
 }
 .tag{
-    background: rgba(var(--card-bg-meta), 0.9);
+    background: rgba(var(--card-bg-meta), 0.5);
     border: 2px solid rgba(var(--text-color-meta), 0.1);
     color: rgba(var(--text-color-meta), 1);
     padding: 0.5em;

@@ -15,7 +15,6 @@ a,button{cursor:pointer;}
 h1,h2,h3,h4,h5,h6,em,strong,b{font-weight:bold;}
 del,ins,u,s,a,a:hover{text-decoration:none;}
 body,textarea,input,button,select,keygen,legend{font:12px/1.14 arial,\5b8b\4f53;color:#333;outline:0;}
-body{background:#fff;}
 a,a:hover{color:rgba(var(--text-color-meta), 1);}
 
 *{
@@ -27,13 +26,13 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     --side-space: 20vw;
 
     --base-radius: 0.5em;
-    --card-bg-meta: 243,244,246;
-    --bg: #f9fafb;
-    --texture: rgba(43,44,46,0.02);
+    --card-bg-meta: 255,255,255;
+    --bg: rgb(249, 250, 251, 0.7);
+    --texture: rgba(43,44,46,0.2);
 
-    --text-color-meta: 156,163,175;
+    --text-color-meta: 136,138,140;
 
-    --card-bg: rgba(var(--card-bg-meta));
+    --card-bg: rgba(var(--card-bg-meta), 1);
     --border-color: #eaedef;
 }
 @media (max-width: 900px) {
@@ -43,7 +42,7 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
 }
 html.dark{
     --card-bg-meta: 32, 32, 32;
-    --bg: #171717;
+    --bg: rgb(23, 23, 23, 0.8);
     --text-color-meta: 115, 115, 115;
     --texture: rgba(99,99,99,0.02);
 
@@ -54,9 +53,14 @@ html::-webkit-scrollbar{
     width: 0;
     height: 0;
 }
-
+html{
+    background-image: url('/images/bg.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 body{
-    background: var(--bg);
+    background-color: var(--bg);
     padding: 0 var(--side-space);
     font-size: 16px;
     color: rgba(var(--text-color-meta), 1);
