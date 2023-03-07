@@ -2,30 +2,32 @@
 import { aboutMe, site } from "src/config";
 const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
 ---
-<div class="about-me">
-    <div class="info-left">
-        {
-            aboutMe.left_tags.map(t => (<span class="tag">{t}</span>))
-        }
+<section>
+    <div class="about-me">
+        <div class="info-left">
+            {
+                aboutMe.left_tags.map(t => (<span class="tag">{t}</span>))
+            }
+        </div>
+        <div class="avatar">
+            <img class="avatar-img" src={aboutMe.avatar_url} alt={site.author}/>
+        </div>
+        <div class="info-right">
+            {
+                aboutMe.right_tags.map(t => (<span class="tag">{t}</span>))
+            }
+        </div>
     </div>
-    <div class="avatar">
-        <img class="avatar-img" src={aboutMe.avatar_url} alt={site.author}/>
-    </div>
-    <div class="info-right">
-        {
-            aboutMe.right_tags.map(t => (<span class="tag">{t}</span>))
-        }
-    </div>
-</div>
 
-<div class="about-me-2">
-    <button class="trigger">Find Me 😶‍🌫️</button>
-    {
-        ss.map(s => (
-            <button class="trigger">{s}</button>
-        ))
-    }
-</div>
+    <div class="about-me-2">
+        <button class="trigger">Find Me 😶‍🌫️</button>
+        {
+            ss.map(s => (
+                <button class="trigger">{s}</button>
+            ))
+        }
+    </div>
+</section>
 
 <style>
 .about-me{
@@ -38,7 +40,7 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     width: 10em;
     height: 10em;
     border-radius: 50%;
-    border: 5px solid rgba(var(--card-bg-meta), 0.5);
+    border: 5px solid var(--card-active-bg);
     transition: 0.3s;
 }
 .about-me .avatar{
@@ -52,7 +54,7 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     background: #57bd6a;
     position: absolute;
     border-radius: 50%;
-    box-shadow: 0 0 0 5px rgba(var(--card-bg-meta), 0.5);
+    box-shadow: 0 0 0 5px var(--card-active-bg);
     /* border: 5px solid var(--bg); */
     bottom: 14px;
     right: 14px;
@@ -64,7 +66,7 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     justify-content: space-around;
 }
 .tag{
-    background: rgba(var(--card-bg-meta), 0.5);
+    background: var(--card-bg);
     border: 2px solid rgba(var(--text-color-meta), 0.1);
     color: rgba(var(--text-color-meta), 1);
     padding: 0.5em;
@@ -94,9 +96,11 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
 .about-me-2{
     width: fit-content;
     margin: 0 auto;
+    height: 3em;
     position: relative;
     display: none;
     justify-content: center;
+    align-items: center;
     user-select: none;
 }
 .trigger{
@@ -108,7 +112,7 @@ const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
     justify-content: center;
     outline: none;
     border-radius: 2em;
-    background: var(--card-bg);
+    background: rgb(var(--card-bg-meta));
     border: none;
     box-shadow: 0 0 0 3px inset var(--border-color);
     color: rgba(var(--text-color-meta), 1);

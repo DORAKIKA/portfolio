@@ -26,15 +26,18 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     --side-space: 20vw;
 
     --base-radius: 0.5em;
-    --card-bg-meta: 255,255,255;
-    --bg: rgb(249, 250, 251, 0.7);
     --texture: rgba(43,44,46,0.2);
 
     --text-color-meta: 136,138,140;
     --text-color: rgba(var(--text-color-meta), 1);
 
-    --card-bg: rgba(var(--card-bg-meta), 1);
-    --border-color: #eaedef;
+    --border-color: rgba(136,138,140,0.2);
+
+    --bg: rgb(249, 250, 251, 0.7);
+    --card-bg-meta: 255,255,255;
+    --card-bg: rgba(255,255,255, 0.3);
+    --card-hover-bg: rgba(255,255,255, 0.6);
+    --card-active-bg: rgba(255,255,255, 0.9);
 }
 @media (max-width: 900px) {
     :root{
@@ -42,12 +45,17 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     }
 }
 html.dark{
-    --card-bg-meta: 32, 32, 32;
-    --bg: rgb(23, 23, 23, 0.8);
     --text-color-meta: 115, 115, 115;
-    --texture: rgba(99,99,99,0.02);
 
-    --border-color: #292929;
+    --border-color: rgba(115,115,115,0.2);
+
+    --texture: rgba(99,99,99,0.02);
+    
+    --bg: rgb(23, 23, 23, 0.8);
+    --card-bg-meta: 66, 66, 66;
+    --card-bg: rgba(var(--card-bg-meta), 0.3);
+    --card-hover-bg: rgba(var(--card-bg-meta), 0.6);
+    --card-active-bg: rgba(var(--card-bg-meta), 0.9);
 }
 
 html::-webkit-scrollbar{

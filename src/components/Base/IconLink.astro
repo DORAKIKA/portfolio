@@ -21,7 +21,7 @@ const Element = href ? 'a' : 'div'
 .icon-link{
     padding: 1em;
     border-radius: var(--base-radius);
-    background: rgba(var(--card-bg-meta), 0.2);
+    background: var(--card-bg);
     display: flex;
     align-items: center;
     gap: 0.75em;
@@ -30,7 +30,7 @@ const Element = href ? 'a' : 'div'
     user-select: none;
 }
 .icon-link:is(:hover, :focus-within){
-    background: rgba(var(--card-bg-meta), 0.5);
+    background: var(--card-hover-bg);
     border-color: var(--icon-bg);
 }
 .icon-link:active{

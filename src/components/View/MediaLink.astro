@@ -24,8 +24,8 @@ import { mediaLink } from "src/config";
 #media-link::after{
     content: "";
     flex: 1 1 0;
-    height: 1px;
-    background: var(--bg);
+    height: 2px;
+    background: var(--border-color);
 }
 #media-link .link-item{
     display: flex;
@@ -33,13 +33,13 @@ import { mediaLink } from "src/config";
     align-items: center;
     width: 2.5em;
     height: 2.5em;
-    background: rgba(var(--card-bg-meta), 0.4);
+    background: var(--card-bg);
     border: 2px solid var(--border-color);
     color: var(--text-color);
     border-radius: 0.5em;
 }
-#media-link .link-item:hover{
-    background: rgba(var(--card-bg-meta), 0.8);
+#media-link .link-item:is(:hover, :focus-within){
+    background: var(--card-hover-bg);
 }
 #media-link .link-item .icon{
     width: 1.5em;

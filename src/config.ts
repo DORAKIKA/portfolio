@@ -18,7 +18,7 @@ export const navs = [
         links: [
             {
                 name: '博客',
-                icon: '<img class="icon" src="/images/dorakika.png" alt="博客" />',
+                icon: '<img class="icon" src="/images/blog.dorakika.cn.png" alt="博客" />',
                 href: 'https://blog.dorakika.cn',
             },{
                 name: 'Github',
@@ -128,7 +128,7 @@ export const mediaLink = {
             href: 'https://github.com/dorakika'
         },{
             name: '博客',
-            icon: '/images/dorakika.png',
+            icon: '/images/blog.dorakika.cn.png',
             href: 'https://blog.dorakika.cn'
         },{
             name: 'mail',

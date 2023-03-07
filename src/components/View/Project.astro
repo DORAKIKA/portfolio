@@ -1,9 +1,11 @@
 ---
 import { project } from "src/config";
 ---
-<h2 class="title">Project</h2>
-<div class="card-container" id="projects">
-</div>
+<section id="project">
+    <h2 class="title">Project</h2>
+    <div class="card-container" id="projects">
+    </div>
+</section>
 <script is:inline set:html={`window.project_config = ${JSON.stringify(project)}`}></script>
 <script is:inline>
 
@@ -46,15 +48,15 @@ function injectProjects(data){
 <style is:global>
 .github-card{
     border: 3px solid rgba(var(--text-color-meta), 0.1);
-    background: rgba(var(--card-bg-meta), 0.2);
+    background: var(--card-bg);
     border-radius: var(--base-radius);
     padding: 1em;
     display: flex;
     flex-direction: column;
     gap: 0.2em; 
 }
-.github-card:hover{
-    background: rgba(var(--card-bg-meta), 0.5);
+.github-card:is(:hover, :focus-within){
+    background: var(--card-hover-bg);
 }
 .github-card .name{
     font-weight: bold;
