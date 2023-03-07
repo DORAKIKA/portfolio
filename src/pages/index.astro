@@ -4,11 +4,14 @@ import Padding from "@components/Base/Padding.astro";
 import Project from "@components/View/Project.astro";
 import UseTech from "@components/View/UseTech.astro";
 import AboutMe from "@components/View/AboutMe.astro";
+import MediaLink from "@components/View/MediaLink.astro";
 import { site } from "src/config"
 ---
 
 <Layout title={`${site.author} | ${site.slogan}`} keywords={site.keywords} description={site.description}>
 	<AboutMe/>
+	<Padding height="2em" />
+	<MediaLink/>
 	<Padding height="2em" />
 	<Project/>
 	<UseTech/>

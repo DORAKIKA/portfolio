@@ -31,6 +31,7 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     --texture: rgba(43,44,46,0.2);
 
     --text-color-meta: 136,138,140;
+    --text-color: rgba(var(--text-color-meta), 1);
 
     --card-bg: rgba(var(--card-bg-meta), 1);
     --border-color: #eaedef;

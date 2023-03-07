@@ -119,3 +119,21 @@ export const useTech = {
         }
     ]
 }
+
+export const mediaLink = {
+    links: [
+        {
+            name: 'Github',
+            icon: '/svg/github.svg',
+            href: 'https://github.com/dorakika'
+        },{
+            name: '博客',
+            icon: '/images/dorakika.png',
+            href: 'https://blog.dorakika.cn'
+        },{
+            name: 'mail',
+            icon: '/svg/mail.svg',
+            href: 'mailto:dorakika@163.com'
+        }
+    ]
+}
