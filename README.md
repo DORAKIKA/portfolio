@@ -1,5 +1,4 @@
 <h1 align="center">
-island<br/>
 一款简洁的个人主页
 </h1>
 
