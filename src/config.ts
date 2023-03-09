@@ -39,7 +39,7 @@ export const aboutMe = {
     right_tags: [
         '哆啦A梦一份子  🥳',
         '吃饭睡觉打游戏 🎮',
-        '设计开发一条龙 🔨'
+        '热爱漫无边际 ✨'
     ]
 }
 
