@@ -19,7 +19,7 @@ const Element = href ? 'a' : 'div'
 
 <style define:vars={{'icon-bg': icon_bg}}>
 .icon-link{
-    padding: 1em;
+    padding: 0.5em 1em 0.5em 0.5em;
     border-radius: var(--base-radius);
     background: var(--card-bg);
     display: flex;
@@ -37,16 +37,15 @@ const Element = href ? 'a' : 'div'
     background: var(--icon-bg);
 }
 .icon{
-    width: 3em;
-    height: 3em;
-    padding: 0.75em;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
     background-color: var(--icon-bg);
-    border-radius: var(--base-radius);
+    border-radius: 50%;
     display: grid;
     place-items: center;
 }
 .text{
-    font-size: 1.25em;
     color: rgba(var(--text-color-meta), 1);
 }
 </style>
