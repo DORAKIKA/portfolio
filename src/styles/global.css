@@ -23,7 +23,7 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
 }
 
 :root{
-    --side-space: 20vw;
+    --side-space: 18vw;
 
     --base-radius: 0.5em;
     --texture: rgba(43,44,46,0.2);
