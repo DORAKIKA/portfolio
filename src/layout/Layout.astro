@@ -12,7 +12,7 @@ interface Props{
 const { title, keywords, description } = Astro.props
 ---
 
-<html lang="zh-CN">
+<html lang="zh-CN" class="dark">
 	<head>
 		<BaseHead title={title} description={description} keywords={keywords}/>
 		<slot name="head"></slot>

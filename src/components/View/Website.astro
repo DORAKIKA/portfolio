@@ -1,0 +1,59 @@
+---
+import SvgWebsite from '@components/Svg/Website.astro'
+import SvgDot from '@components/Svg/Dot.astro'
+---
+
+<div class="website-container">
+    <section
+    class="a-website"
+    >
+        <div class="svg">
+            <SvgWebsite/>
+        </div>
+        <a class="code" href="https://blog.dorakika.cn/">blog.dorakika.cn</a>
+        <h3 class="heading-3">个人博客</h3>
+        <p class="body">
+            使用Astro构建，主要分享前端相关的文章，偶尔记录一些生活随笔。
+        </p>
+    </section>
+</div>
+
+<style>
+.website-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1em;
+}
+.a-website{
+    background-image: linear-gradient(83.21deg,#3245FF 0%,#B845ED 100%);
+    display: flex;
+    flex-direction: column;
+    color:  rgba(255, 255, 255, 0.8);
+    position: relative;
+    border-radius: var(--base-radius);
+    margin: 1em 0;
+    padding: 1.5em;
+}
+.a-website:nth-child(2){
+    background-image: linear-gradient(247.23deg,#4AF2C8 0%,#2F4CB3 100%);
+}
+.a-website:nth-child(3){
+    background-image: linear-gradient(66.77deg,#D83333 0%,#F041FF 100%);
+}
+.a-website .code{
+    font-family: "MD IO 0.5",md-io-fallback,monospace;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+}
+.a-website .svg{
+    position: absolute;
+    top: 2em;
+    right: 1em;
+}
+.a-website h3{
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    font-size: 2em;
+    margin: 1em 0 0.5em;
+}
+</style>

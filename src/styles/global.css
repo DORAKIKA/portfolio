@@ -47,6 +47,7 @@ html.dark{
     --text-color-meta: 126, 133, 151;
 
     --border-color: rgba(115,115,115,0.2);
+    --border-color: rgba(0, 0, 0, 0.2);
 
     --texture: rgba(99,99,99,0.02);
     
