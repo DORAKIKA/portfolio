@@ -28,14 +28,14 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     --base-radius: 0.5em;
     --texture: rgba(43,44,46,0.2);
 
-    --text-color-meta: 136,138,140;
+    --text-color-meta: 81, 87, 90;
     --text-color: rgba(var(--text-color-meta), 1);
 
     --border-color: rgba(255,255,255,0.2);
-    --bg: rgb(249, 250, 251, 0.7);
+    --bg: rgb(235, 244, 256, 0.72);
     --card-bg-meta: 255,255,255;
-    --card-bg: rgba(255,255,255, 0.3);
-    --card-hover-bg: rgba(255,255,255, 0.6);
+    --card-bg: rgba(255,255,255, 0.4);
+    --card-hover-bg: rgba(255,255,255, 0.7);
     --card-active-bg: rgba(255,255,255, 0.9);
 }
 @media (max-width: 900px) {
@@ -44,16 +44,16 @@ a,a:hover{color:rgba(var(--text-color-meta), 1);}
     }
 }
 html.dark{
-    --text-color-meta: 115, 115, 115;
+    --text-color-meta: 126, 133, 151;
 
     --border-color: rgba(115,115,115,0.2);
 
     --texture: rgba(99,99,99,0.02);
     
-    --bg: rgb(23, 23, 23, 0.8);
-    --card-bg-meta: 66, 66, 66;
-    --card-bg: rgba(var(--card-bg-meta), 0.3);
-    --card-hover-bg: rgba(var(--card-bg-meta), 0.6);
+    --bg: rgb(14, 19, 23, 0.85);
+    --card-bg-meta: 8, 12, 15;
+    --card-bg: rgba(var(--card-bg-meta), 0.4);
+    --card-hover-bg: rgba(var(--card-bg-meta), 0.7);
     --card-active-bg: rgba(var(--card-bg-meta), 0.9);
 }
 
