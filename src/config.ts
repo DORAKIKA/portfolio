@@ -48,77 +48,7 @@ export const project = {
     filter_readme: true,
 }
 
-export const useTech = {
-    techs: [
-        {
-            name: '开发',
-            items: [
-                {
-                    icon: '/svg/typescript.svg',
-                    name: 'TypeScript',
-                    icon_bg: 'rgba(0, 122, 204, 0.1)'
-                },
-                {
-                    icon: '/svg/vue.js.svg',
-                    name: 'Vue.js',
-                    icon_bg: 'rgba(65, 184, 131, 0.1)'
-                },
-                {
-                    icon: '/svg/astro.svg',
-                    name: 'Astro',
-                    icon_bg: 'rgb(255, 93, 1,0.1)'
-                },
-                {
-                    icon: '/svg/html5.svg',
-                    name: 'HTML5',
-                    icon_bg: 'rgba(221, 75, 37, 0.1)'
-                },
-                {
-                    icon: '/svg/css3.svg',
-                    name: 'CSS3',
-                    icon_bg: 'rgba(33, 150, 243, 0.1)'
-                },
-                {
-                    icon: '/svg/javascript.svg',
-                    name: 'JavaScript',
-                    icon_bg: 'rgba(244, 222, 81, 0.2)'
-                },
-                {
-                    icon: '/svg/node.js.svg',
-                    name: 'Node.js',
-                    icon_bg: 'rgba(111, 166, 96, 0.1)'
-                }
-            ]
-        },{
-            name: '工具',
-            items: [
-                {
-                    icon: '/svg/vscode.svg',
-                    name: 'VS Code',
-                    icon_bg: 'rgba(0, 122, 204, 0.1)'
-                },
-                {
-                    icon: '/svg/mastergo.svg',
-                    name: 'Master Go',
-                    icon_bg: 'rgba(57, 112, 227, 0.1)'
-                }
-            ]
-        },{
-            name: '服务',
-            items: [
-                {
-                    icon: '/svg/github.svg',
-                    name: 'Github',
-                    href: 'https://github.com/DORAKIKA'
-                },{
-                    icon: '/svg/vercel.svg',
-                    name: 'Vercel',
-                    href: 'https://vercel.com/dashboard'
-                }
-            ]
-        }
-    ]
-}
+// use 内容在view/UseTech.astro里面改，svg图片动态导入的话页面需要加载一下，所以硬编码了
 
 export const mediaLink = {
     links: [
