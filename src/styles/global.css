@@ -69,6 +69,7 @@ html{
     background-attachment: fixed;
 }
 body{
+    min-height: 100vh;
     background-color: var(--bg);
     padding: 0 var(--side-space);
     font-size: 16px;
