@@ -15,9 +15,15 @@ fetch(`https://api.github.com/users/${project_config.github_name}/repos?per_page
 
 function injectProjects(data){
     data.sort((a,b) => b.stargazers_count - a.stargazers_count);
-    if(project_config.filter_readme){
-        data = data.filter(p => p.name.trim().toUpperCase() !== project_config.github_name.trim().toUpperCase())
-    }
+    data = data.filter(p => {
+        if(project_config.filter_fork && p.fork){
+            return false
+        }
+        if(project_config.filter_readme && p.name.trim().toUpperCase() === project_config.github_name.trim().toUpperCase()){
+            return false
+        }
+        return true
+    })
     const container = document.getElementById('projects');
     const domStr = data.map(pr => `
         <a class="github-card" href="${pr.html_url}">

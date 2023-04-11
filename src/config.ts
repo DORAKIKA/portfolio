@@ -46,6 +46,7 @@ export const aboutMe = {
 export const project = {
     github_name: 'dorakika',
     filter_readme: true,
+    filter_fork: true
 }
 
 // use 内容在view/UseTech.astro里面改，svg图片动态导入的话页面需要加载一下，所以硬编码了
