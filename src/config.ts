@@ -10,6 +10,10 @@ export const footer = {
     beian: {
         enabled: true,
         value: '皖ICP备2022003488号'
+    },
+    live: {
+        enabled: true,
+        from: '2023-02-26'
     }
 }
 export const navs = [

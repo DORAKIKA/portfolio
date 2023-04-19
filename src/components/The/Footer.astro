@@ -5,7 +5,53 @@ import { footer } from "src/config";
 
 <footer id="footer">
     {footer.beian.enabled ? (<span><a href="https://beian.miit.gov.cn/" target="_blank">{footer.beian.value}</a></span>) : ''}
+    {
+        footer.live.enabled ? (
+            <span><span>本站已运行</span><span id="footer-live"></span></span>
+        ): null
+    }
 </footer>
+
+<script>
+import { footer } from "src/config";
+
+let liveDom = document.getElementById('footer-live');
+if(liveDom){
+    setInterval(updateLiveTime, 100);
+}
+function updateLiveTime(){
+    let now = (new Date()).getTime();
+    let from = (new Date(footer.live.from)).getTime();
+    let diff = now - from;
+    diff = Math.round(diff / 1000)
+    let second = diff % 60;
+    diff = Math.round(diff / 60);
+    let minute = diff % 60;
+    diff = Math.round(diff / 60);
+    let hour = diff % 24;
+    diff = Math.round(diff / 24);
+    
+    let flag = false;
+    let str = ''
+    if(diff){
+        flag = true;
+        str += diff + '天'
+    }
+    if(hour || flag){
+        flag = true;
+        str += hour + '时'
+    }
+    if(minute || flag){
+        flag = true;
+        str += minute + '分'
+    }
+    if(second || flag){
+        flag = true;
+        str += second + '秒'
+    }
+    liveDom.innerText = str;
+}
+</script>
 
 <style>
 #footer{
