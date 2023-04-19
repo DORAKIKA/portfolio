@@ -72,3 +72,11 @@ export const mediaLink = {
         }
     ]
 }
+
+export const third = {
+    use51la: {
+        enabled: true,
+        id: 'JfDeLdTDm4pOVeoL',
+        ck: 'JfDeLdTDm4pOVeoL'
+    }
+}
