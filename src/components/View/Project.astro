@@ -1,25 +1,23 @@
 ---
-import { project } from "src/config";
 ---
 <section id="project">
     <h2 class="title">Project</h2>
     <div class="card-container" id="projects">
     </div>
 </section>
-<script is:inline set:html={`window.project_config = ${JSON.stringify(project)}`}></script>
-<script is:inline>
-
-fetch(`https://api.github.com/users/${project_config.github_name}/repos?per_page=10`).then(res => res.json()).then(res => {
+<script>
+import { project } from "src/config";
+fetch(`https://api.github.com/users/${project.github_name}/repos?per_page=10`).then(res => res.json()).then(res => {
     injectProjects(res)
 })
 
 function injectProjects(data){
     data.sort((a,b) => b.stargazers_count - a.stargazers_count);
     data = data.filter(p => {
-        if(project_config.filter_fork && p.fork){
+        if(project.filter_fork && p.fork){
             return false
         }
-        if(project_config.filter_readme && p.name.trim().toUpperCase() === project_config.github_name.trim().toUpperCase()){
+        if(project.filter_readme && p.name.trim().toUpperCase() === project.github_name.trim().toUpperCase()){
             return false
         }
         return true
