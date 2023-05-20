@@ -10,12 +10,39 @@ const {href, text, icon_bg='rgba(var(--text-color-meta),0.1)'} = Astro.props
 const Element = href ? 'a' : 'div'
 ---
 
-<Element class="icon-link" style={`--icon-bg: ${icon_bg}`} href={href} target="_blank">
+<Element class="icon-link" style={`--icon-bg: ${icon_bg}`} href={href} target="_blank" draggable>
     <div class="icon">
         <slot></slot>
     </div>
     <span class="text">{text}</span>
 </Element>
+
+<script>
+const draggableItems = document.querySelectorAll('.icon-link[draggable]');
+draggableItems.forEach(di => {
+    di.addEventListener('dragstart', dragStart);
+    di.addEventListener('dragend', dragEnd);
+    di.addEventListener('drag', dragging);
+})
+const startPos = [0,0];
+function dragStart(e){
+    startPos[0] = e.clientX;
+    startPos[1] = e.clientY;
+}
+
+function dragging(e){
+    if(e.clientX === 0 || e.clientY === 0) return;
+    e.target.style.transitionProperty = 'background,border';
+    e.target.style.top = (e.clientY - startPos[1]) + 'px';
+    e.target.style.left = (e.clientX - startPos[0]) + 'px';
+}
+
+function dragEnd(e){
+    e.target.style.top = '0px';
+    e.target.style.left = '0px';
+    e.target.style.transitionProperty = 'all';
+}
+</script>
 
 <style define:vars={{'icon-bg': icon_bg}}>
 .icon-link{
@@ -29,14 +56,17 @@ const Element = href ? 'a' : 'div'
     border: 3px solid var(--border-color);
     cursor: pointer;
     user-select: none;
-    transition: all 0.3s;
+    transition-property: background,border;
+    transition-duration: 0.3s;
+    position: relative;
 }
 .icon-link:is(:hover, :focus-within){
     background: var(--card-hover-bg);
     border-color: var(--icon-bg);
+    background: var(--icon-bg);
 }
 .icon-link:active{
-    background: var(--icon-bg);
+    opacity: 0.6;
 }
 .icon{
     width: 2em;
