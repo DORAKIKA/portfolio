@@ -19,6 +19,7 @@ const Element = href ? 'a' : 'div'
 
 <style define:vars={{'icon-bg': icon_bg}}>
 .icon-link{
+    flex: 1 0 auto;
     padding: 0.5em 1em 0.5em 0.5em;
     border-radius: var(--base-radius);
     background: var(--card-bg);
@@ -28,6 +29,7 @@ const Element = href ? 'a' : 'div'
     border: 3px solid var(--border-color);
     cursor: pointer;
     user-select: none;
+    transition: all 0.3s;
 }
 .icon-link:is(:hover, :focus-within){
     background: var(--card-hover-bg);
