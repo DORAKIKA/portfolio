@@ -1,0 +1,6 @@
+---
+const { name } = Astro.props;
+const link = './' + name + '.astro';
+const Icon = (await import(link))?.default;
+---
+<Icon></Icon>
