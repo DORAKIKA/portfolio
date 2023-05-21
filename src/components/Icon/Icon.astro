@@ -1,6 +1,13 @@
 ---
+const Icons = import.meta.globEager("./**.astro");
 const { name } = Astro.props;
+
+// 防止递归死
+if(name === 'Icon') throw new Error("禁止指定name为Icon");
+
+// console.log(Icons)
 const link = './' + name + '.astro';
-const Icon = (await import(link))?.default;
+// const Icon = (await import(link))?.default;
+const Icon = Icons[link].default
 ---
 <Icon></Icon>
