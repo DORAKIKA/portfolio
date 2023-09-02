@@ -3,6 +3,7 @@
 // all pages through the use of the <BaseHead /> component.
 import { site } from 'src/config';
 import ProductionInject from './ProductionInject.astro';
+import { ViewTransitions } from 'astro:transitions'
 
 export interface Props {
 	title: string;
@@ -44,5 +45,7 @@ const { title = "DORAKIKA", description = "", cover="", keywords="" } = Astro.pr
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(cover, Astro.url)} />
+
+<ViewTransitions />
 
 {isPROD ? <ProductionInject/> : ''}

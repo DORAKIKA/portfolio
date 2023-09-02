@@ -3,7 +3,7 @@ import { aboutMe, site } from "src/config";
 const ss = aboutMe.left_tags.concat(aboutMe.right_tags)
 ---
 <section>
-    <div class="about-me">
+    <div class="about-me" transition:persist transition:name="about-me" transition:animate="fade">
         <div class="info-left">
             {
                 aboutMe.left_tags.map(t => (<span class="tag">{t}</span>))

@@ -15,42 +15,44 @@ import { footer } from "src/config";
 <script>
 import { footer } from "src/config";
 
-let liveDom = document.getElementById('footer-live');
-if(liveDom){
-    setInterval(updateLiveTime, 100);
-}
-function updateLiveTime(){
-    let now = (new Date()).getTime();
-    let from = (new Date(footer.live.from)).getTime();
-    let diff = now - from;
-    diff = Math.round(diff / 1000)
-    let second = diff % 60;
-    diff = Math.round(diff / 60);
-    let minute = diff % 60;
-    diff = Math.round(diff / 60);
-    let hour = diff % 24;
-    diff = Math.round(diff / 24);
-    
-    let flag = false;
-    let str = ''
-    if(diff){
-        flag = true;
-        str += diff + '天'
+document.addEventListener('astro:page-load', () => {
+    let liveDom = document.getElementById('footer-live');
+    if(liveDom){
+        setInterval(updateLiveTime, 100);
     }
-    if(hour || flag){
-        flag = true;
-        str += hour + '时'
+    function updateLiveTime(){
+        let now = (new Date()).getTime();
+        let from = (new Date(footer.live.from)).getTime();
+        let diff = now - from;
+        diff = Math.round(diff / 1000)
+        let second = diff % 60;
+        diff = Math.round(diff / 60);
+        let minute = diff % 60;
+        diff = Math.round(diff / 60);
+        let hour = diff % 24;
+        diff = Math.round(diff / 24);
+        
+        let flag = false;
+        let str = ''
+        if(diff){
+            flag = true;
+            str += diff + '天'
+        }
+        if(hour || flag){
+            flag = true;
+            str += hour + '时'
+        }
+        if(minute || flag){
+            flag = true;
+            str += minute + '分'
+        }
+        if(second || flag){
+            flag = true;
+            str += second + '秒'
+        }
+        liveDom.innerText = str;
     }
-    if(minute || flag){
-        flag = true;
-        str += minute + '分'
-    }
-    if(second || flag){
-        flag = true;
-        str += second + '秒'
-    }
-    liveDom.innerText = str;
-}
+})
 </script>
 
 <style>

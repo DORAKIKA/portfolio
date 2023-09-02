@@ -24,6 +24,6 @@ const { title, keywords, description } = Astro.props
         <main id="main">
             <slot></slot>
         </main>
-		<TheFooter/>
+		<TheFooter transition:name="footer" transition:presist transition:animate="slide({duration: '4s'})"/>
 	</body>
 </html>
